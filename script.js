@@ -61,3 +61,24 @@ header.addEventListener('dblclick', function() {
     linkElement.disabled = true; // Désactiver le fichier CSS
   }
 });
+
+let cards = document.getElementsByClassName('card');
+let cardsLittle = false;
+
+for (let i = 0; i < cards.length; i++) {
+  let viewButton = cards[i].querySelector('.btn-success');
+  let cardText = cards[i].querySelector('.card-text');
+  let cardImage = cards[i].querySelector('.card-img-top');
+
+  viewButton.addEventListener('mouseover', function() {
+    if (cardsLittle === false) {
+      cardText.style.display = 'none';
+      cardImage.style.width = '20%';
+      cardsLittle = true;
+    } else if (cardsLittle === true) {      
+      cardText.style.display = 'block';
+      cardImage.style.width = '100%';
+      cardsLittle = false;
+    }
+  });
+}
