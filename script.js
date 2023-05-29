@@ -82,3 +82,48 @@ for (let i = 0; i < cards.length; i++) {
     }
   });
 }
+
+// Fonctionnalités 7 et 8
+document.addEventListener("DOMContentLoaded", function() {
+  const nextButton = document.querySelector(".btn-secondary");
+  const cardsContainer = document.querySelector(".album .row");
+
+  nextButton.addEventListener("click", function() {
+    const firstCard = cardsContainer.firstElementChild;
+    cardsContainer.appendChild(firstCard);
+  });
+
+  const previousButton = document.querySelector(".btn-primary");
+
+  previousButton.addEventListener("click", function(event) {
+    event.preventDefault();
+    const lastCard = cardsContainer.lastElementChild;
+    cardsContainer.insertBefore(lastCard, cardsContainer.firstElementChild);
+  });
+});
+
+// Fonctionnalité 9
+document.addEventListener("DOMContentLoaded", function() {
+  const logo = document.querySelector(".navbar-brand");
+  logo.setAttribute("tabindex", "0");
+
+  logo.addEventListener("keydown", function(event) {
+    const body = document.querySelector("body");
+    const key = event.key;
+
+    body.classList.remove("col-4", "offset-md-4", "offset-md-8");
+
+    if (key === "a") {
+      body.classList.add("col-4");
+      body.classList.add("offset-md-0");
+    } else if (key === "y") {
+      body.classList.add("col-4");
+      body.classList.add("offset-md-4");
+    } else if (key === "p") {
+      body.classList.add("col-4");
+      body.classList.add("offset-md-8");
+    } else if (key === "b") {
+      // Do nothing, keep the default layout
+    }
+  });
+});
