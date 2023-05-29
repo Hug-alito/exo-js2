@@ -1,10 +1,12 @@
-let nbClick = 0;
+//F 1
+Let nbClick = 0;
 
 document.getElementsByTagName('footer')[0].addEventListener("click", function() {
   nbClick++;
   console.log("Nombre de clics : " + nbClick);
 });
 
+//F 2
 let navbarCollapse = true;
 let navbar = document.getElementById('navbarHeader');
 let navbarButton = document.getElementsByClassName('navbar-toggler')[0];
@@ -20,6 +22,7 @@ navbarButton.addEventListener("click", function() {
   }
 });
 
+//F 3
 let firstCardText = document.getElementsByClassName('card-text')[0];
 let editButtonFirstCard = document.getElementsByClassName('btn-outline-secondary')[0];
 
@@ -27,17 +30,13 @@ editButtonFirstCard.addEventListener("click", function() {
   firstCardText.style.color = "red";
 });
 
+//F 4
 let secondCardText = document.getElementsByClassName('card-text')[1];
 let editButtonSecondCard = document.getElementsByClassName('btn-outline-secondary')[1];
 let editButtonSecondCardClick = false;
 
-// Récupérer la feuille de style
 var styleSheet = document.styleSheets[0];
-
-// Créer une nouvelle règle CSS
 var cssRuleGreenText = ".green-text { color: green; font-weight: bold; }";
-
-// Insérer la règle dans la feuille de style
 styleSheet.insertRule(cssRuleGreenText, styleSheet.cssRules.length);
 
 editButtonSecondCard.addEventListener("click", function() {
@@ -51,6 +50,7 @@ editButtonSecondCard.addEventListener("click", function() {
   }
 });
 
+//F 5
 let linkElement = document.querySelector('link[href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"]');
 let header = document.getElementsByTagName('header')[0];
 
@@ -62,6 +62,7 @@ header.addEventListener('dblclick', function() {
   }
 });
 
+//F 6
 let cards = document.getElementsByClassName('card');
 let cardsLittle = false;
 
@@ -83,7 +84,7 @@ for (let i = 0; i < cards.length; i++) {
   });
 }
 
-// Fonctionnalités 7 et 8
+// F 7 ET 8
 document.addEventListener("DOMContentLoaded", function() {
   const nextButton = document.querySelector(".btn-secondary");
   const cardsContainer = document.querySelector(".album .row");
@@ -102,7 +103,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-// Fonctionnalité 9
+// F 9
 document.addEventListener("DOMContentLoaded", function() {
   const logo = document.querySelector(".navbar-brand");
   logo.setAttribute("tabindex", "0");
